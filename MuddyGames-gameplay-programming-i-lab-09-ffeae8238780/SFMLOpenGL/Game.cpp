@@ -130,11 +130,11 @@ void Game::initialize()
 	vertex[18].coordinate[1] = -0.5f; 
 	vertex[18].coordinate[2] = 0.0f;
 
-	vertex[19].coordinate[0] = 0.5f;
-	vertex[19].coordinate[1] = -0.5f; 
+	vertex[19].coordinate[0] = -0.5f;
+	vertex[19].coordinate[1] = 0.5f; 
 	vertex[19].coordinate[2] = 0.0f;
 
-	vertex[20].coordinate[0] = -0.5f;
+	vertex[20].coordinate[0] = 0.5f;
 	vertex[20].coordinate[1] = 0.5f; 
 	vertex[20].coordinate[2] = 0.0f;
 	
@@ -142,63 +142,63 @@ void Game::initialize()
 	vertex[21].coordinate[1] = 0.5f; 
 	vertex[21].coordinate[2] = 0.0f;
 
-	vertex[22].coordinate[0] = -0.5f;
-	vertex[22].coordinate[1] = 0.5f; 
+	vertex[22].coordinate[0] = 0.5f;
+	vertex[22].coordinate[1] = -0.5f; 
 	vertex[22].coordinate[2] = 0.0f;
 
-	vertex[23].coordinate[0] = 0.5f;
+	vertex[23].coordinate[0] = -0.5f;
 	vertex[23].coordinate[1] = -0.5f; 
 	vertex[23].coordinate[2] = 0.0f;
 	//// fourth
 
 	vertex[24].coordinate[0] = -0.5f;
-	vertex[24].coordinate[1] = -0.5f; 
-	vertex[24].coordinate[2] = 0.0f;
+	vertex[24].coordinate[1] = 0.5f; 
+	vertex[24].coordinate[2] = -0.5f;
 
-	vertex[25].coordinate[0] = 0.5f;
-	vertex[25].coordinate[1] = -0.5f; 
+	vertex[25].coordinate[0] = -0.5f;
+	vertex[25].coordinate[1] = 0.5f; 
 	vertex[25].coordinate[2] = 0.0f;
 
 	vertex[26].coordinate[0] = 0.5f;
-	vertex[26].coordinate[1] = -0.5f; 
+	vertex[26].coordinate[1] = 0.5f; 
 	vertex[26].coordinate[2] = -0.5f;
 
 	vertex[27].coordinate[0] = 0.5f;
-	vertex[27].coordinate[1] = -0.5f; 
+	vertex[27].coordinate[1] = 0.5f; 
 	vertex[27].coordinate[2] = -0.5f;
 
-	vertex[28].coordinate[0] = -0.5f;
-	vertex[28].coordinate[1] = -0.5f; 
-	vertex[28].coordinate[2] = -0.5f;
+	vertex[28].coordinate[0] = 0.5f;
+	vertex[28].coordinate[1] = 0.5f; 
+	vertex[28].coordinate[2] = 0.0f;
 
 	vertex[29].coordinate[0] = -0.5f;
-	vertex[29].coordinate[1] = -0.5f; 
+	vertex[29].coordinate[1] = 0.5f; 
 	vertex[29].coordinate[2] = 0.0f;
 	//// fifth
 
 	vertex[30].coordinate[0] = 0.5f;
-	vertex[30].coordinate[1] = 0.5f;
+	vertex[30].coordinate[1] = -0.5f;
 	vertex[30].coordinate[2] = -0.5f;
 
-	vertex[31].coordinate[0] = -0.5f;
-	vertex[31].coordinate[1] = 0.5f;
-	vertex[31].coordinate[2] = 0.5f;
+	vertex[31].coordinate[0] = 0.5f;
+	vertex[31].coordinate[1] = -0.5f;
+	vertex[31].coordinate[2] = 0.0f;
 
-	vertex[32].coordinate[0] = 0.5f;
+	vertex[32].coordinate[0] = -0.5f;
 	vertex[32].coordinate[1] = -0.5f;
 	vertex[32].coordinate[2] = -0.5f;
 
-	//vertex[33].coordinate[0] = -0.5f;
-	//vertex[33].coordinate[1] = -0.5f;
-	//vertex[33].coordinate[2] = 0.5f;
+	vertex[33].coordinate[0] = -0.5f;
+	vertex[33].coordinate[1] = -0.5f;
+	vertex[33].coordinate[2] = -0.5f;
 
-	//vertex[34].coordinate[0] = 0.5f;
-	//vertex[34].coordinate[1] = 0.5f;
-	//vertex[34].coordinate[2] = -0.5f;
+	vertex[34].coordinate[0] = -0.5f;
+	vertex[34].coordinate[1] = -0.5f;
+	vertex[34].coordinate[2] = 0.0f;
 
-	//vertex[35].coordinate[0] = -0.5f;
-	//vertex[35].coordinate[1] = 0.5f;
-	//vertex[35].coordinate[2] = -0.5f;
+	vertex[35].coordinate[0] = 0.5f;
+	vertex[35].coordinate[1] = -0.5f;
+	vertex[35].coordinate[2] = 0.0f;
 	// sixth
 
 	vertex[0].color[0] = 1.1f;
@@ -426,6 +426,24 @@ void Game::update()
 		matrixApp(MyMatrix3::rotationX(0.0005));
 	}
 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	{
+		matrixApp(MyMatrix3::translation(MyVector3(0.0005, 0, 0)));
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	{
+		matrixApp(MyMatrix3::translation(MyVector3(-0.0005, 0, 0)));
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+	{
+		matrixApp(MyMatrix3::scale(1.0005));
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
+	{
+		matrixApp(MyMatrix3::scale(0.9995));
+	}
 
 	//Change vertex data
 	//vertex[0].coordinate[0] += -0.0001f;
